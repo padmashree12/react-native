@@ -1,4 +1,4 @@
-import React, { useState, createRef, useRef } from "react";
+import React, { useState, createRef, useRef, useEffect } from "react";
 import {
   StyleSheet,
   TextInput,
@@ -76,6 +76,10 @@ const LoginScreen = ({ navigation }) => {
       .catch(() => {});
   };
 
+  useEffect(() => {
+    isAuthenticated && navigation.replace("DrawerNavigationRoutes");
+  }, [isAuthenticated]);
+
   return (
     <Provider>
       <View style={styles.mainBody}>
@@ -108,7 +112,7 @@ const LoginScreen = ({ navigation }) => {
                 />
               </View>
 
-              <View style={styles.marginLarge}>
+              <View>
                 {authError && (
                   <Portal>
                     <Dialog visible={visible} onDismiss={hideDialog}>

@@ -4,7 +4,7 @@
 
 This project is using:
 
-- [create-react-native-dapp](cawfree/create-react-native-dapp) to bootstrap the project.
+- [create-react-native-dapp](https://github.com/cawfree/create-react-native-dapp) to bootstrap the project.
 - [WalletConnect v1 react-native integration](https://docs.walletconnect.com/1.0/quick-start/dapps/react-native) for authenthication (we use a slightly modiefied version, located in `./src/WalletConnect` to allow to modify the `enable` function of Moralis).
 - [react-moralis](https://github.com/MoralisWeb3/react-moralis) for react hooks
 
@@ -17,6 +17,14 @@ Check the corresponding docs for additional information and help.
 |                                                        App Home                                                        |                                              WalletConnect Authentication                                              |
 | :--------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
 | ![Github Demo 1](https://user-images.githubusercontent.com/9363303/141595048-c3127959-92e8-4c8b-b184-fc36091b384c.gif) | ![Github Demo 2](https://user-images.githubusercontent.com/9363303/141595778-ca546ade-ae9d-4ef7-ace5-fca2638be089.gif) |
+
+|                                                        Transactions                                                        |                                              NFT Screen                                             |
+| :--------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+| ![NFT screenrecording ](https://user-images.githubusercontent.com/9363303/143194753-7fefc03e-4bb2-49a9-b1c2-b7b11e55ca5e.GIF) | ![IMG_4512](https://user-images.githubusercontent.com/9363303/143195894-b8cf9bbc-7518-4ea6-852b-7ed5e97a51cb.GIF) |
+
+
+
+
 
 # ⭐️ `Star us`
 
@@ -57,9 +65,11 @@ yarn install
 
 🚴‍♂️ Run your App:
 
-- Web: `yarn web`
-- IOS: `yarn ios`
-- Android: `yarn android`
+- IOS: `yarn ios` for emulator *Make sure you have Xcode or atleast Xcode command line tools installed*
+    -  For physical IOS Device: Open the `moraliscreatereactnativedapp.xcworkspace` from `ios` folder in Xcode. Run the App by choosing your connected physical device.  
+- Android:
+    - Command `yarn start` 
+    - Open `android` folder from source code in Android Studio. Click "Run app" button to open either emulator or physical device. To see if devices are available, run command `adb devices` in your terminal. 
 
 # 🧭 Table of contents
 
@@ -76,6 +86,7 @@ yarn install
     - [`<RecentTransactions />`](#recenttransactions-)
     - [`<TransactionDetails />`](#transactiondetails-)
     - [`<Address />`](#address-)
+    - [`<Blockie />`](#blockie-)
 - [🧰 Ethereum Hooks](#-ethereum-hooks)
     - [`useERC20balance()`](#useerc20balance)
     - [`useERC20Transfers()`](#useerc20transfers)
@@ -103,7 +114,7 @@ yarn install
 📨 `<ERC20Balance />` : Displays all ERC20 Balances with Price.
 **Options**:
 
-- chain: chain to fetch data from.
+- `chain`: chain to fetch data from.
 
 ### `<Assets />`
 
@@ -116,6 +127,18 @@ yarn install
 ### `<TransactionDetails />`
 
 `<TransactionDetails />` : Modal to display all ERC20 Transaction related content
+
+### `<Blockie />`
+
+A custom Blockie indenticon generator for React Native. 
+
+<img src="https://user-images.githubusercontent.com/9363303/143417343-8280bd77-552f-4417-b3b2-bce6900c7dc1.jpg" width="302" height="69">
+<img src="https://user-images.githubusercontent.com/9363303/143417572-7b283258-f737-4a36-81c4-ddd23d9037af.jpg" width="314.5" height="79">
+<img src="https://user-images.githubusercontent.com/9363303/143417345-6c7a328f-48b8-465b-90be-2ced124c14ec.jpg" width="300" height="75.5">
+
+**Options**:
+- `address`: Address to generate Blockie Icon from.
+- `size`: Size of the Icon. *For more custom sizes, edit the <Blockie/> component as to your liking*
 
 ### `<Address />`
 
